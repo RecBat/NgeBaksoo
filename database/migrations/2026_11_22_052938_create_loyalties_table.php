@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('loyalties', function (Blueprint $table) {
             $table->id();
+            $table->string('cust_phone')->unique();
+            $table->unsignedInteger('stamps')->default(0);
             $table->timestamps();
         });
     }

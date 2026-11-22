@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedInteger('rating');
             $table->text('comment')->nullable();
             $table->timestamps();
+            $table->unique(['order_id', 'menu_id']);
         });
     }
 
