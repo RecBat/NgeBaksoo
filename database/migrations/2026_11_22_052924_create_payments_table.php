@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained()->restrictOnDelete();
+            $table->foreignId('order_id')->unique()->constrained()->restrictOnDelete();
             $table->string('method');
             $table->string('status')->default('pending');
             $table->timestamps();
